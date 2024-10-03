@@ -324,64 +324,37 @@
                 <i class="fas fa-calendar-alt"></i>
                 <a href="https://www.example.com/calendar">Calendar</a>
             </div>
-            <div class="menu-item">
-                <i class="fas fa-users"></i>
-                <a href="https://www.example.com/team">Team</a>
-            </div>
-            <div class="menu-item">
-                <i class="fas fa-chart-line"></i>
-                <a href="https://www.example.com/analytics">Analytics</a>
-            </div>
-            <div class="menu-item">
-                <i class="fas fa-tasks"></i>
-                <a href="https://www.example.com/todo">To-Do List</a>
-            </div>
-            <div class="menu-item">
-                <i class="fas fa-share-alt"></i>
-                <a href="https://www.example.com/share">Share</a>
-            </div>
         </div>
 
         <div class="footer">
-            <button onclick="showFeedbackForm()">Feedback</button>
-            <button onclick="toggleTheme()">Toggle Theme</button>
-            <div>
-                <a href="https://www.example.com/resources">Resources</a>
-            </div>
+            <button>Action 1</button>
+            <button>Action 2</button>
+            <button>Action 3</button>
+            <a href="https://www.example.com/help">Help</a>
         </div>
     </div>
 </div>
 
 <script>
-    // Update running text with current date and time
-    function updateDateTime() {
+    // JavaScript untuk tanggal dan waktu
+    const dateTimeElement = document.getElementById('running-text');
+    setInterval(() => {
         const now = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        const dateTimeString = now.toLocaleString('id-ID', options);
-        document.getElementById('running-text').textContent = dateTimeString;
-    }
-    setInterval(updateDateTime, 1000);
+        const formattedDate = now.toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+        });
+        dateTimeElement.innerText = formattedDate;
+    }, 1000);
 
-    // Function to toggle dark/light theme
-    function toggleTheme() {
-        const body = document.body;
-        body.classList.toggle('dark-theme');
-        if (body.classList.contains('dark-theme')) {
-            body.style.backgroundColor = '#1c1c1c';
-            body.style.color = 'white';
-        } else {
-            body.style.backgroundColor = '#f1f1f1';
-            body.style.color = 'black';
-        }
-    }
-
-    // Function to show feedback form
-    function showFeedbackForm() {
-        alert("Silakan berikan umpan balik Anda!");
-    }
-
-    // Call the function to set the initial date and time
-    updateDateTime();
+    // JavaScript untuk efek running text
+    const text = "Selamat datang di dashboard!";
+    document.getElementById('running-text').innerText = text;
 </script>
 </body>
 </html>
