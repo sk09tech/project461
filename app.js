@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   var password = document.getElementById('password').value;
 
   // Kirim data ke Google Apps Script Web App
-  fetch('https://script.google.com/macros/s/WEB_APP_URL/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzwbHbSnYB2U-fTfK_PhoBhbbT_cBpwqEFJNiRA0QKES_zbeh0XpdMStkSbBEyYf0CD/exec', {
     method: 'POST',
     body: JSON.stringify({ email: email, password: password }),
     headers: { 'Content-Type': 'application/json' }
